@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senior Dev Daily Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Senior Dev Daily Planner</h1>
+            <div class="date-display" id="currentDate"></div>
+            <div class="points-display">Points: <span id="pointsValue">100</span>/100</div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+        </div>
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('daily-tasks', event)">Daily Tasks</button>
+            <button class="tab" onclick="switchTab('tech-journal', event)">Tech Journal</button>
+            <button class="tab" onclick="switchTab('food-wellness', event)">Food & Wellness</button>
+            <button class="tab" onclick="switchTab('career-growth', event)">Career Growth</button>
+            <button class="tab" onclick="switchTab('nyc-planning', event)">NYC Planning</button>
+            <button class="tab" onclick="switchTab('opportunities', event)">Opportunities</button>
+            <button class="tab" onclick="switchTab('personal-dev', event)">Personal Dev</button>
+        </div>
+        <!-- Daily Tasks Tab -->
+        <div class="tab-content active" id="daily-tasks">
+            <div class="section">
+                <h3>💪 Non-Negotiable Daily Tasks</h3>
+                <div class="task-item">
+                    <input type="checkbox" class="task-checkbox" onchange="updatePoints(this, 15)">
+                    <span class="task-text">Morning coding practice (1 hour)</span>
+                    <span class="task-points">15 pts</span>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" class="task-checkbox" onchange="updatePoints(this, 10)">
+                    <span class="task-text">Review and respond to emails</span>
+                    <span class="task-points">10 pts</span>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" class="task-checkbox" onchange="updatePoints(this, 20)">
+                    <span class="task-text">Work on primary project (2+ hours)</span>
+                    <span class="task-points">20 pts</span>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" class="task-checkbox" onchange="updatePoints(this, 10)">
+                    <span class="task-text">Tech reading/learning (30 min)</span>
+                    <span class="task-points">10 pts</span>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" class="task-checkbox" onchange="updatePoints(this, 15)">
+                    <span class="task-text">Exercise or physical activity</span>
+                    <span class="task-points">15 pts</span>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" class="task-checkbox" onchange="updatePoints(this, 10)">
+                    <span class="task-text">Plan tomorrow's priorities</span>
+                    <span class="task-points">10 pts</span>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" class="task-checkbox" onchange="updatePoints(this, 10)">
+                    <span class="task-text">Journal/reflection time</span>
+                    <span class="task-points">10 pts</span>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" class="task-checkbox" onchange="updatePoints(this, 10)">
+                    <span class="task-text">Network/connect with peers</span>
+                    <span class="task-points">10 pts</span>
+                </div>
+            </div>
+        </div>
+        <!-- Tech Journal Tab -->
+        <div class="tab-content" id="tech-journal">
+            <div class="journal-section">
+                <div class="journal-header">
+                    <h3 class="journal-title">💻 Tech Learning & Insights</h3>
+                    <button class="add-entry-btn" onclick="addJournalEntry('tech-journal')">+ Add Entry</button>
+                </div>
+                <div id="tech-journal-entries"></div>
+            </div>
+        </div>
+        <!-- Food & Wellness Tab -->
+        <div class="tab-content" id="food-wellness">
+            <div class="journal-section">
+                <div class="journal-header">
+                    <h3 class="journal-title">🥗 Food & Wellness</h3>
+                    <button class="add-entry-btn" onclick="addJournalEntry('food-wellness')">+ Add Entry</button>
+                </div>
+                <div id="food-wellness-entries"></div>
+            </div>
+        </div>
+        <!-- Career Growth Tab -->
+        <div class="tab-content" id="career-growth">
+            <div class="journal-section">
+                <div class="journal-header">
+                    <h3 class="journal-title">📈 Career Growth & Goals</h3>
+                    <button class="add-entry-btn" onclick="addJournalEntry('career-growth')">+ Add Entry</button>
+                </div>
+                <div id="career-growth-entries"></div>
+            </div>
+        </div>
+        <!-- NYC Planning Tab -->
+        <div class="tab-content" id="nyc-planning">
+            <div class="journal-section">
+                <div class="journal-header">
+                    <h3 class="journal-title">🏙️ NYC Planning & Preparation</h3>
+                    <button class="add-entry-btn" onclick="addJournalEntry('nyc-planning')">+ Add Entry</button>
+                </div>
+                <div id="nyc-planning-entries"></div>
+            </div>
+        </div>
+        <!-- Opportunities Tab -->
+        <div class="tab-content" id="opportunities">
+            <div class="journal-section">
+                <div class="journal-header">
+                    <h3 class="journal-title">🚀 Opportunities & Ideas</h3>
+                    <button class="add-entry-btn" onclick="addJournalEntry('opportunities')">+ Add Entry</button>
+                </div>
+                <div id="opportunities-entries"></div>
+            </div>
+        </div>
+        <!-- Personal Development Tab -->
+        <div class="tab-content" id="personal-dev">
+            <div class="journal-section">
+                <div class="journal-header">
+                    <h3 class="journal-title">🌱 Personal Development</h3>
+                    <button class="add-entry-btn" onclick="addJournalEntry('personal-dev')">+ Add Entry</button>
+                </div>
+                <div id="personal-dev-entries"></div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
