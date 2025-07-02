@@ -6,4 +6,4 @@ This is a basic starter project with:
 - `style.css`: CSS file for styling
 
 ## How to Run
-Just open `index.html` in your browser to see it in action.
+Just open `https://riddhiRaina.github.io/senior-dev-daily-planner/` in your browser to see it in action.
